@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookNest - Library Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">B</div>
+      <div>
+        <h3>BookNest</h3>
+        <small>LIBRARY MANAGER</small>
+      </div>
+    </div>
+    <p class="menu-label">MENU</p>
+    <a href="#dashboard" class="menu-item active">Dashboard</a>
+    <a href="#books" class="menu-item">All Books</a>
+    <a href="#add" class="menu-item">+ Add New Book</a>
+
+    <div class="side-card">
+      <h4>Your Library</h4>
+      <p>Manage your collection in one place.</p>
+    </div>
+  </aside>
+
+  <main class="main" id="dashboard">
+    <header class="topbar">
+      <div>
+        <small>Pages / Dashboard</small>
+        <h1>Book Management</h1>
+      </div>
+      <div class="user"><span class="avatar" id="avatar">WA</span> <span id="userName">Waleeja Atif</span></div>
+    </header>
+
+    <section class="hero">
+      <small>YOUR PERSONAL LIBRARY</small>
+      <h2>Manage your books,<br />organize your knowledge.</h2>
+      <p>Keep track of your collection and discover your next read.</p>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><small>Total Books</small><h2 id="totalBooks">0</h2><span>Books in your library</span></div>
+      <div class="stat"><small>Categories</small><h2 id="totalCategories">0</h2><span>Different categories</span></div>
+      <div class="stat"><small>Authors</small><h2 id="totalAuthors">0</h2><span>Unique authors</span></div>
+    </section>
+
+    <section class="card" id="add">
+      <small class="label">COLLECTION</small>
+      <h3 id="formTitle">Add a New Book</h3>
+      <p class="sub">Enter the book details below.</p>
+      <div class="form-row">
+        <div>
+          <label>Book Title</label>
+          <input type="text" id="title" placeholder="Enter book title" />
+        </div>
+        <div>
+          <label>Author Name</label>
+          <input type="text" id="author" placeholder="Enter author name" />
+        </div>
+        <div>
+          <label>Category</label>
+          <select id="category">
+            <option value="">Select category</option>
+            <option>Education</option>
+            <option>Technology</option>
+            <option>Self Development</option>
+            <option>Fiction</option>
+            <option>Science</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn ghost" id="cancelBtn" style="display:none">Cancel</button>
+        <button class="btn primary" id="saveBtn">+ Add Book</button>
+      </div>
+    </section>
+
+    <section class="card" id="books">
+      <div class="card-head">
+        <div>
+          <small class="label">YOUR COLLECTION</small>
+          <h3>All Books</h3>
+          <p class="sub">View and manage your saved books.</p>
+        </div>
+        <span class="pill" id="bookCount">0 Books</span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>BOOK TITLE</th><th>AUTHOR</th><th>CATEGORY</th><th>ACTIONS</th></tr>
+        </thead>
+        <tbody id="booksTable"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <small class="label">API DEMONSTRATION</small>
+      <h3>Test Name API</h3>
+      <p class="sub">Send your name to the Node.js server.</p>
+      <div class="api-row">
+        <input type="text" id="nameInput" placeholder="Enter your name" />
+        <button class="btn primary" id="getNameBtn">GET Name</button>
+        <button class="btn ghost" id="postNameBtn">POST Name</button>
+        <button class="btn ghost" id="putNameBtn">PUT Name</button>
+        <button class="btn danger" id="deleteNameBtn">DELETE Name</button>
+      </div>
+      <pre class="response" id="apiResponse">API response will appear here...</pre>
+    </section>
+
+    <footer>BookNest — Simple Book Management System | Built with HTML, CSS, JavaScript &amp; Express</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
